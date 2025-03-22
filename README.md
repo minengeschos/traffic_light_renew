@@ -1,4 +1,4 @@
-유튜브 영상
+유튜브 영상 : https://youtu.be/xyVCujzZKqc
 
 
 
