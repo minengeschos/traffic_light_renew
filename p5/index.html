@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Traffic Light Controller</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f4f4f4;
+      text-align: center;
+      margin: 0;
+      padding: 20px;
+    }
+    h1 {
+      margin: 20px;
+    }
+    .slider-container {
+      margin: 15px 0;
+    }
+    label {
+      font-size: 16px;
+      margin-right: 10px;
+    }
+    input[type="range"] {
+      width: 250px;
+    }
+    .msDisplay {
+      font-size: 16px;
+      margin-left: 10px;
+    }
+    #connectButton {
+      padding: 12px 24px;
+      font-size: 16px;
+      margin: 20px 0;
+      border: none;
+      border-radius: 5px;
+      background-color: #4CAF50;
+      color: white;
+      cursor: pointer;
+    }
+    #connectButton:hover {
+      background-color: #45a049;
+    }
+    .status {
+      margin-top: 10px;
+      font-size: 18px;
+      color: #555;
+    }
+    .indicator {
+      margin: 20px auto;
+      width: 100px;
+      height: 300px;
+      background-color: black;
+      border-radius: 10px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-around;
+      padding: 10px;
+    }
+    .light {
+      width: 70px;
+      height: 70px;
+      border-radius: 50%;
+      background-color: gray;
+      margin: 10px auto;
+    }
+  </style>
+</head>
+<body>
+  <h1>Traffic Light Controller</h1>
+
+  <div class="slider-container">
+    <label for="rSlider">Red Light Duration:</label>
+    <input type="range" id="rSlider" min="500" max="3000" value="2000">
+    <span class="msDisplay" id="rSliderValue">2000 ms</span>
+  </div>
+  <div class="slider-container">
+    <label for="ySlider">Yellow Light Duration:</label>
+    <input type="range" id="ySlider" min="500" max="3000" value="500">
+    <span class="msDisplay" id="ySliderValue">500 ms</span>
+  </div>
+  <div class="slider-container">
+    <label for="gSlider">Green Light Duration:</label>
+    <input type="range" id="gSlider" min="500" max="3000" value="2000">
+    <span class="msDisplay" id="gSliderValue">2000 ms</span>
+  </div>
+
+  <button id="connectButton">Connect to Arduino</button>
+  <div class="status" id="serialInfo">Status: Disconnected</div>
+  <div class="status" id="modeInfo">Mode: Default Mode</div>
+  <div class="status" id="brightnessInfo">Brightness: 0%</div>
+
+  <div class="indicator">
+    <div class="light" id="red-indicator"></div>
+    <div class="light" id="yellow-indicator"></div>
+    <div class="light" id="green-indicator"></div>
+  </div>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.6.0/p5.js"></script>
+  <script src="sketch.js"></script>
+</body>
+</html>
